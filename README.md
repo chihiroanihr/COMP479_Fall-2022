@@ -19,4 +19,4 @@ cd ~/pypy3-venv/
 
 
 ## Project 1
-### Goal: Text preprocessing with NLTK, proofreading results
+#### Goal: Text preprocessing with NLTK, proofreading results
