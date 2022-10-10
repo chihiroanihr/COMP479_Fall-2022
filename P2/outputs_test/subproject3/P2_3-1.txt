@@ -1,0 +1,16 @@
++--------------------+------------------+----------+----------+------------------------+-------------+-------------+
+|                    | (Distinct) Terms | Δ% Terms | T% Terms | Nonpositional Postings | Δ% Postings | T% Postings |
++--------------------+------------------+----------+----------+------------------------+-------------+-------------+
+|     unfiltered     |      58405       |    --    |    --    |        1611240         |      --     |      --     |
+|     no numbers     |      56948       |   2.49   |   2.49   |        1558958         |     3.24    |     3.24    |
+|    case folding    |      41408       |  27.29   |   29.1   |        1611240         |     0.0     |     3.24    |
+| 30 stop words (*)  |      41384       |   0.06   |  29.14   |        1505555         |     3.43    |     6.56    |
+| 150 stop words (*) |      41291       |   0.28   |   29.3   |        1240501         |    20.43    |    23.01    |
+|      stemming      |      30717       |  25.61   |  47.41   |        1240501         |     0.0     |    23.01    |
++--------------------+------------------+----------+----------+------------------------+-------------+-------------+
+[References]: 
+ - (Distinct) Terms: Number of distinct terms in dictionary
+ - Nonpositional Postings: Number of nonpositional postings (total postings)
+ - ∆%: reduction in size from the previous
+ - T%: culmulative (total) reduction from unfiltered
+   (*) 30 stoop words and 150 stop words both use case folding as their reference line
