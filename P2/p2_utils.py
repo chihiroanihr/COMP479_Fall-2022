@@ -181,7 +181,7 @@ def remove_duplicates(postings_list):
     new_postings_list = list(set(postings_list))
 
     num_postings_removed = len(postings_list) - len(new_postings_list)
-    print("  - " + str(num_postings_removed) + " postings have been removed due to duplicate terms.")
+    print("  - " + str(num_postings_removed) + " postings have been removed due to duplicate.")
 
     # sort again since list got messy after removing duplicates
     new_postings_list = sort_postings(new_postings_list)

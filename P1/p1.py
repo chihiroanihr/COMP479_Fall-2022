@@ -7,7 +7,7 @@ from nltk.corpus import stopwords
 
 
 # Pipeline[1]: read all sgm data files
-def extract_documents_from_corpus(sgm_file):
+def extract_documents_from_corpus(sgm_file, filename):
     documents = {}  # list of documents extracted
     NUM_DOCUMENTS = 0  # total number of documents in corpus (from all the sgm files)
 
@@ -31,7 +31,7 @@ def extract_documents_from_corpus(sgm_file):
         # count number of docs
         NUM_DOCUMENTS += 1
 
-    print(str(NUM_DOCUMENTS) + " documents have been successfully extracted.")
+    print(str(NUM_DOCUMENTS) + ' documents have been successfully extracted from file "' + filename + '".')
 
     return documents
 
@@ -50,7 +50,7 @@ def tokenize(documents, filename):
             # generate postings
             postings.append((doc_id, token))
     
-    print("Current number of postings in file " + filename + ": " + str(len(n_postings)))
+    print('Current number of postings in file "' + filename + '": ' + str(len(postings)))
 
     return postings
 
@@ -64,7 +64,7 @@ def lowercase(postings, filename):
             word = word.lower()
         n_postings.append((doc_id, word))
 
-    print("Current number of postings in file " + filename + ": " + str(len(n_postings)))
+    print('Current number of postings in file "' + filename + '": ' + str(len(postings)))
 
     return n_postings
 

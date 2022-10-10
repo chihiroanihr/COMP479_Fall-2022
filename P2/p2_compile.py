@@ -272,7 +272,7 @@ def S3_compressed_indexer(F):
         num_terms_lowercase,
         compute_reduction(num_terms_no_numbers, num_terms_lowercase),
         compute_reduction(num_terms_default, num_terms_lowercase), 
-        num_postings_default,
+        num_postings_lowercase,
         compute_reduction(num_postings_no_numbers, num_postings_lowercase),
         compute_reduction(num_postings_default, num_postings_lowercase)
     ])
@@ -372,17 +372,17 @@ def S3_compressed_query_search(index):
 
 
 ### START ###
-print("\n===================== Pre processing =====================\n")
+print("\n===================== Pre-processing =====================")
 #sgm_files = filter_corpus(DIRECTORY, MAX_SGM_FILES) # for testing purpose, limit number of files
 sgm_files = filter_corpus(DIRECTORY) # if default num files
 F = P1_review(sgm_files)
 # Subproject 1
-print("\n\n\n===================== Subproject 1 =====================\n")
+print("\n\n\n===================== Subproject 1 =====================")
 index = S1_naive_indexer(F)
 # Subproject 2
-print("\n\n\n===================== Subproject 2 =====================\n")
+print("\n\n\n===================== Subproject 2 =====================")
 S2_naive_query_search(index)
 # Subproject 3
-print("\n\n\n===================== Subproject 3 =====================\n")
+print("\n\n\n===================== Subproject 3 =====================")
 index = S3_compressed_indexer(F)
 S3_compressed_query_search(index)
