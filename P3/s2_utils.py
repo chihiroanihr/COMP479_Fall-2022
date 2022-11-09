@@ -201,6 +201,7 @@ def RSVd_compute(documents, index, query_terms, variables, k1=0, b=1):
     return RSVd_dict
 
 
+# Tokenize given queries
 def query_process(input_query):
     tokens = S2_get_tokens_list(input_query)
 
