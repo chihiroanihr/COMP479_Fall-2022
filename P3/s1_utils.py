@@ -18,7 +18,7 @@ def remove_index_duplicates(index):
 
     for term, postings in index.items():
         # remove duplicate docIDs by set, and sort again
-        new_postings = list(set(postings)).sort(key = lambda i: int(i))
+        new_postings = list(set(postings)).sort(key = lambda i: i)
         new_index[term] = new_postings
         # count num of postings removed
         num_postings_removed += len(postings) - len(new_postings)
@@ -51,7 +51,7 @@ def naive_indexer(test_corpus):
 
     # Sort (based on the term in ascending alphabetical order and docID in ascending order)
     print("(2) Sorting list of term-docId pairs")
-    test_corpus.sort(key=lambda posting: (posting[0], int(posting[1])))
+    test_corpus.sort(key=lambda posting: (posting[0], posting[1]))
 
     # make inverted index
     print("(3) Creating inverted index")
@@ -81,7 +81,7 @@ def spimi_indexer(test_corpus):
     
     # Sort (based on the term in ascending alphabetical order and docID in ascending order)
     print("(3) Sorting inverted index hash-table")
-    index = dict(sorted(index.items(), key=lambda x:(x[0], x[1].sort(key = lambda y: int(y)))))
+    index = dict(sorted(index.items(), key=lambda x:(x[0], x[1].sort(key = lambda y: y))))
 
     endTime = time.time()
     elapsedTime = endTime - startTime

@@ -48,7 +48,7 @@ def extract_documents_from_corpus(sgm_files):
 
         # extracrt all documents(articles) from the file
         for content in file_contents:
-            docID = content['newid']
+            docID = int(content['newid'])
             title = content.find("title")
             title = title.text if title else ""
             body = content.find("body")

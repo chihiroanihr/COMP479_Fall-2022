@@ -1,3 +1,4 @@
+import json
 import os
 
 
@@ -19,7 +20,7 @@ def file_output(result, subproj_step, output_directory):
         output_file.write("(term: documentID)\n")
         output_file.write("--------------------\n")
         for term_docId in result:
-            output_file.write(str(term_docId[0]) + ": " + term_docId[1] + "\n")
+            output_file.write(str(term_docId[0]) + ": " + str(term_docId[1]) + "\n")
 
     elif subproj_step.endswith('indexer'):
         output_file.write("{dictionary: posting lists}\n")
@@ -29,21 +30,13 @@ def file_output(result, subproj_step, output_directory):
             count_posting = len(postings)
             for posting in postings:
                 if count_posting == 1:
-                    output_file.write(posting)
+                    output_file.write(str(posting))
                 else:
-                    output_file.write(posting + " -> ")
+                    output_file.write(str(posting) + " -> ")
                 count_posting -= 1
-            output_file.write("\n")
-    
-    elif subproj_step == 'tftd':
-        output_file.write("{dictionary: ALL[documentID, term frequency]}\n")
-        output_file.write("--------------------\n")
-        for term, tftd in result.items():
-            output_file.write(term + ": ")
-            output_file.write(str(tftd))
             output_file.write("\n")
 
     else:
-        output_file.write(str(result))
+        output_file.write(json.dumps(result, indent=4))
 
     output_file.close()
