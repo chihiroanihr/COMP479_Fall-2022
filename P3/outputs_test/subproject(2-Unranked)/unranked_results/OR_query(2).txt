@@ -1,0 +1,13 @@
+Query Search:
+population
+
+Query Tokens:
+['population']
+
+
+There are not enough query tokens to perform boolean union.
+
+Ranked list of retrieved documentIDs: 
+{documentID: # queries found}
+-----------------------------
+{}

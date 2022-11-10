@@ -1,0 +1,12 @@
+Query Search:
+America
+
+Query Tokens:
+['America']
+
+
+There are not enough query tokens to perform boolean intersection.
+
+List of retrieved documentIDs: 
+-----------------------------
+[]

@@ -1,0 +1,13 @@
+Query Search:
+America
+
+Query Tokens:
+['America']
+
+
+There are not enough query tokens to perform boolean union.
+
+Ranked list of retrieved documentIDs: 
+{documentID: # queries found}
+-----------------------------
+{}

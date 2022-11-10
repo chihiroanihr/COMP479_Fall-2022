@@ -1,0 +1,12 @@
+Query Search:
+Drug company bankruptcies
+
+Query Tokens:
+['Drug', 'company', 'bankruptcies']
+
+
+0 intersection postings (AND) found.
+
+List of retrieved documentIDs: 
+-----------------------------
+[]

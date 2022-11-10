@@ -40,21 +40,20 @@ def create_inverted_index(test_corpus):
     return index
 
 
-def naive_indexer(test_corpus):
-    print("Naive Indexer: ")
-    
+def naive_indexer(test_corpus, remove_duplicate=True):  
     startTime = time.time()
 
     # Remove duplicates
-    print("(1) Removing duplicates")
-    test_corpus = remove_list_duplicates(test_corpus)
+    if remove_duplicate:
+        print("* Removing duplicates...")
+        test_corpus = remove_list_duplicates(test_corpus)
 
     # Sort (based on the term in ascending alphabetical order and docID in ascending order)
-    print("(2) Sorting list of term-docId pairs")
+    print("* Sorting list of term-docId pairs...")
     test_corpus.sort(key=lambda posting: (posting[0], posting[1]))
 
     # make inverted index
-    print("(3) Creating inverted index")
+    print("* Creating inverted index...")
     index = create_inverted_index(test_corpus)
 
     endTime = time.time()
@@ -63,24 +62,23 @@ def naive_indexer(test_corpus):
     print("--> Total number of distinct terms(type) in dictionary: " + str(len(index)))
     print("==> Execution Time: " + str(elapsedTime))
 
-    return index
+    return index, elapsedTime
 
 
-def spimi_indexer(test_corpus):
-    print("SPIMI Indexer: ")
-
+def spimi_indexer(test_corpus, remove_duplicate=True):
     startTime = time.time()
 
     # Remove duplicates
-    print("(1) Removing duplicates")
-    test_corpus = remove_list_duplicates(test_corpus)
+    if remove_duplicate:
+        print("* Removing duplicates...")
+        test_corpus = remove_list_duplicates(test_corpus)
 
     # make inverted index
-    print("(2) Creating inverted index")
+    print("* Creating inverted index...")
     index = create_inverted_index(test_corpus)
     
     # Sort (based on the term in ascending alphabetical order and docID in ascending order)
-    print("(3) Sorting inverted index hash-table")
+    print("* Sorting inverted index hash-table...")
     index = dict(sorted(index.items(), key=lambda x:(x[0], x[1].sort(key = lambda y: y))))
 
     endTime = time.time()
@@ -89,7 +87,7 @@ def spimi_indexer(test_corpus):
     print("--> Total number of distinct terms(type) in dictionary: " + str(len(index)))
     print("==> Execution Time: " + str(elapsedTime))
 
-    return index
+    return index, elapsedTime
 
 
 def S1_test_identical(dir_name):

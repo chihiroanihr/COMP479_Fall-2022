@@ -8,7 +8,7 @@ def filter_files(directory, max_sgm_files=-1):
     NUM_SGM_FILES = 0  # number of sgm files read from reuters21578
     sgm_files = []
 
-    print("Collecting Reuters files.")
+    print("(1) Collecting Reuters files...")
 
     # iterate all the files inside the folder
     for file in os.listdir(directory):
@@ -33,7 +33,7 @@ def extract_documents_from_corpus(sgm_files):
     documents = {}  # list of documents extracted
     NUM_DOCUMENTS = 0  # total number of documents in corpus (from all the sgm files)
 
-    print("Reading and extracting documents from Reuters files.")
+    print("(2) Reading and extracting documents from Reuters files...")
 
     # iterate all the files inside the folder
     for filename in sgm_files:
@@ -62,7 +62,7 @@ def extract_documents_from_corpus(sgm_files):
             # count number of docs
             NUM_DOCUMENTS += 1
 
-        print('  - ' + str(NUM_DOCUMENTS) + ' documents have been successfully extracted.')
+    print('  - ' + str(NUM_DOCUMENTS) + ' documents have been successfully extracted.')
 
     return documents
 
@@ -71,7 +71,7 @@ def extract_documents_from_corpus(sgm_files):
 def tokenize(documents):
     term_docID_pairs = []
     
-    print("Tokenizing all documents.")
+    print("(3) Tokenizing all documents...")
 
     for docId, text in documents.items():
         for token in word_tokenize(text):
@@ -90,9 +90,10 @@ def tokenize(documents):
 
 # Make test corpus to be used for indexing
 def make_test_corpus(term_docId_pairs, max_terms=0):
+
     # [DEMO] Use only 10K terms for testing purpose
     if max_terms:
-        print("Reduced the number of terms in test corpus to " + str(max_terms) + ".")
+        print("(4) Reduced the number of terms in test corpus to " + str(max_terms) + ".")
         return term_docId_pairs[:max_terms]
     else:
         return term_docId_pairs

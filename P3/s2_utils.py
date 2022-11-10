@@ -1,14 +1,14 @@
+from math import log
 from collections import Counter
 from nltk import word_tokenize
-from math import log
+from nltk.corpus import stopwords
 
 
 # Create inverted index
 def S2_indexer_with_dup(test_corpus):
     index = {} # empty inverted index
 
-    print("Creating inverted index")
-
+    print("* Creating inverted index with duplicates...")
     for term, docID in test_corpus:
         if term in index:
             # append docID to the existing term
@@ -16,32 +16,32 @@ def S2_indexer_with_dup(test_corpus):
         else:
             index[term] = [docID] 
 
-    print("Sorting inverted index")
+    print("* Sorting inverted index...")
     index = dict(sorted(index.items(), key=lambda x:(x[0], x[1].sort(key = lambda y: y))))
 
     print("--> Total number of distinct terms(type) in dictionary: " + str(len(index)))
 
     return index
 
-def S2_remove_duplicates(index):
-    new_index = {}
-    num_postings_removed = 0
+# def S2_remove_duplicates(index):
+#     new_index = {}
+#     num_postings_removed = 0
     
-    print("Removing duplicates from inverted index")
+#     print("Removing duplicates from inverted index")
 
-    for term, postings in index.items():
-        # remove duplicate docIDs by set, and sort again
-        new_postings = list(set(postings))
-        # count num of postings removed
-        num_postings_removed += len(postings) - len(new_postings)
-        # sort docIDs in postings list
-        sorted_new_postings = sorted(new_postings)
-        # append postings to dictionary
-        new_index[term] = sorted_new_postings
+#     for term, postings in index.items():
+#         # remove duplicate docIDs by set, and sort again
+#         new_postings = list(set(postings))
+#         # count num of postings removed
+#         num_postings_removed += len(postings) - len(new_postings)
+#         # sort docIDs in postings list
+#         sorted_new_postings = sorted(new_postings)
+#         # append postings to dictionary
+#         new_index[term] = sorted_new_postings
 
-    print("  - " + str(num_postings_removed) + " postings have been removed due to duplicate.")
+#     print("  - " + str(num_postings_removed) + " postings have been removed due to duplicate.")
 
-    return new_index
+#     return new_index
 
 def S2_get_tokens_list(text):
     # tokenize words in doc
@@ -51,6 +51,8 @@ def S2_get_tokens_list(text):
 
     return tokens
 
+
+# ------------------------- Subproject(2)-Ranked ------------------------- #
 
 # Number of terms t in each documents d
 def TFtd(index):
@@ -151,7 +153,7 @@ def iDFt_compute(N, DFt):
     return log(N/DFt)
 
 # Given the document, how relevant the term is
-def RSVd_compute(documents, index, query_terms, variables, k1=0, b=1):
+def RSVd_compute(documents, index, query_tokens, variables, k1=0, b=1):
     '''
     k1: positive tuning parameter that calibrates the document term frequency scaling
         0: binary model (no term frequency)
@@ -176,13 +178,13 @@ def RSVd_compute(documents, index, query_terms, variables, k1=0, b=1):
         # get Ld value
         LD_val = dict_LD[docID]
 
-        for term in query_terms:
+        for token in query_tokens:
             # if tftd exists (tftd != 0)
-            if term in index_tftd and docID in index_tftd[term]:
+            if token in index_tftd and docID in index_tftd[token]:
                 # get tftd value
-                TFtd_val = index_tftd[term][docID]
+                TFtd_val = index_tftd[token][docID]
                 # get dft value
-                DFt_val = DFt_compute(index, term)
+                DFt_val = DFt_compute(index, token)
 
                 # compute weighting
                 iDFt = iDFt_compute(N_val, DFt_val)
@@ -201,8 +203,129 @@ def RSVd_compute(documents, index, query_terms, variables, k1=0, b=1):
     return RSVd_dict
 
 
-# Tokenize given queries
+# ------------------------- Subproject(2)-Unranked ------------------------- #
+
+# Boolean search (AND)
+def intersection(query_tokens, index):
+    postings_total = []
+    common_postings = []
+    message = ""
+
+    if len(query_tokens) >= 2:
+        # Get postings list for every tokens first
+        for token in query_tokens:
+            if token in index:
+                postings = index[token]
+                postings_total.append(postings)
+        
+        # Get Intersection
+        common_postings = sorted(list(set.intersection(*[set(postings) for postings in postings_total])))
+
+        # If intersection postings found
+        if common_postings:
+            # output
+            message = str(len(common_postings)) + " intersection postings (AND) found."
+            print(" - " + message)
+
+        else:
+            # Output
+            message = "0 intersection postings (AND) found."
+            print(" - " + message)
+
+    else:
+        message = "There are not enough query tokens to perform boolean intersection."
+        print(" - " + message)
+
+    # make dictionary to store info
+    AND_info = {'postings': common_postings, 'message': message}
+
+    return AND_info
+
+# Boolean search (OR)
+def union(query_tokens, index):
+    postings_total = []
+    union_postings = []
+    union_postings_ranked = {}
+    message = ""
+
+    # If enough query tokens exist
+    if len(query_tokens) >= 2:
+        # Get postings list for every tokens first
+        for token in query_tokens:
+            if token in index:
+                postings = index[token]
+                postings_total.append(postings)
+        
+        # Get Union
+        union_postings = sorted(list(set.union(*[set(postings) for postings in postings_total])))
+        
+        # If union postings found
+        if union_postings:
+            # Compute rank of how many keywords union docs contain
+            for docID in union_postings:
+                freq_docID = sum(postings.count(docID) for postings in postings_total)
+                union_postings_ranked[docID] = freq_docID
+
+            # Get Union Rank
+            union_postings_ranked = dict(sorted(union_postings_ranked.items(), key=lambda x:x[1], reverse=True))
+
+            # Output
+            message = str(len(union_postings)) + " union postings (OR) found."
+            print(" - " + message)
+
+        else:
+            # Output
+            message = "0 union postings (OR) found."
+            print(" - " + message)
+
+    else:
+        message = "There are not enough query tokens to perform boolean union."
+        print(" - " + message)
+
+    # make dictionary to store info
+    OR_info = {'postings': union_postings, 'ranked_postings': union_postings_ranked, 'message': message}
+    
+    return OR_info
+
+
+# ---------------------------- Sample Queries ---------------------------- #
+
+# Tokenize and remove stop words from given queries
 def query_process(input_query):
+    # Tokenize
     tokens = S2_get_tokens_list(input_query)
 
+    # Remove stopwords from queries
+    stop_words = list(set(stopwords.words('english')))
+    tokens[:] = [token for token in tokens if token not in stop_words]
+
     return tokens
+
+
+
+
+# ************************** Testing ************************** #
+if __name__ == "__main__":
+
+    sample_queries1 = "America"
+    sample_queries2 = "population"
+    sample_queries3 = "South Korea and Japan"
+    sample_queries4 = "Democrats' welfare and healthcare reform policies"
+    sample_queries5 = "Drug company bankruptcies"
+    sample_queries6 = "George Bush"
+
+    stop_words = list(set(stopwords.words('english')))
+    print("Stopwords: " + str(stop_words) + "\n")
+
+    tokens1 = query_process(sample_queries1)
+    tokens2 = query_process(sample_queries2)
+    tokens3 = query_process(sample_queries3)
+    tokens4 = query_process(sample_queries4)
+    tokens5 = query_process(sample_queries5)
+    tokens6 = query_process(sample_queries6)
+    print("Tokens 1: " + str(tokens1))
+    print("Tokens 2: " + str(tokens2))
+    print("Tokens 3: " + str(tokens3))
+    print("Tokens 4: " + str(tokens4))
+    print("Tokens 5: " + str(tokens5))
+    print("Tokens 5: " + str(tokens6))

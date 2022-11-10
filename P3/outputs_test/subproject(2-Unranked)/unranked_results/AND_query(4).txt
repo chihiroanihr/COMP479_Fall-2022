@@ -1,0 +1,12 @@
+Query Search:
+Democrats' welfare and healthcare reform policies
+
+Query Tokens:
+['Democrats', 'welfare', 'healthcare', 'reform', 'policies']
+
+
+0 intersection postings (AND) found.
+
+List of retrieved documentIDs: 
+-----------------------------
+[]
