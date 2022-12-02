@@ -6,4 +6,4 @@ sample_queries5 = "Drug company bankruptcies"
 sample_queries6 = "George Bush"
 
 def get_sample_queries():
-    return [sample_queries1, sample_queries2, sample_queries3, sample_queries4, sample_queries5]
+    return [sample_queries1, sample_queries2, sample_queries3, sample_queries4, sample_queries5, sample_queries6]

@@ -1,7 +1,7 @@
 Execution time for Naive indexer and SPIMI indexer
 
-Naive Indexer: 0.005676984786987305 seconds
-SPIMI Indexer: 0.005117177963256836 seconds
+Naive Indexer: 0.005727291107177734 seconds
+SPIMI Indexer: 0.005071163177490234 seconds
 
-Naive Indexer allowing duplicate term-docID pairs: 0.0073621273040771484 seconds
-SPIMI Indexer allowing duplicate term-docID pairs: 0.005326032638549805 seconds
+Naive Indexer allowing duplicate term-docID pairs: 0.007120847702026367 seconds
+SPIMI Indexer allowing duplicate term-docID pairs: 0.00385284423828125 seconds

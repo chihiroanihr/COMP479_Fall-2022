@@ -1,0 +1,26 @@
+Query Search:
+George Bush
+
+Query Tokens:
+['George', 'Bush']
+
+
+13 intersection postings (AND) found.
+
+List of retrieved documentIDs: 
+-----------------------------
+[
+    854,
+    965,
+    2796,
+    3560,
+    4008,
+    5405,
+    7525,
+    8500,
+    8593,
+    16780,
+    20719,
+    20860,
+    20891
+]
