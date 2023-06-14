@@ -16,7 +16,7 @@ entrypoints==0.3
 filelock==3.3.2
 graphviz==0.16
 ipykernel==5.5.3
-ipython==7.20.0
+ipython==8.10.0
 ipython-genutils==0.2.0
 ipywidgets==7.6.3
 jedi==0.18.0
