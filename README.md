@@ -36,19 +36,19 @@ Text preprocessing with NLTK, proofreading results
 
 In this project, [**pypy3**](https://www.pypy.org/) is used as Python3 executable.
 
-#### Install pypy3 on MacOS:
+#### Install pypy3 on MacOS
 
-brew install pypy3
+`$ brew install pypy3`
 
-#### Install virtualenv:
+#### Install virtualenv
 
-pypy3 -m pip install virtualenv
+`$ pypy3 -m pip install virtualenv`
 
 #### Create a PyPy virtualenv in the directory pypy-venv
 
-pypy3 -m virtualenv pypy3-env
+`$ pypy3 -m virtualenv pypy3-env`
 
-#### Start working in the virtual environment:
+#### Start working in the virtual environment
 
-cd ~/pypy3-venv/
-. bin/activate
+`$ cd ~/pypy3-venv/` </br>
+`$ . bin/activate`
