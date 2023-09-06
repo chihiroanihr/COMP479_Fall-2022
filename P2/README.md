@@ -10,8 +10,54 @@ This assignment consists of 3 stages: **P1**, **P2**, and **P3**.
 
 ## Overview
 
-Text preprocessing with NLTK, proofreading results
+The purpose of this project is to implement a **naïve indexer**, **single-term query search**, and **lossy dictionary compression indexer** (a.k.a **Compressed Indexer**).
+
+Given the Reuter’s Corpus [_Reuters-21578_](../reuters21578_extracted/), both naïve indexer and compressed indexer extract the raw text of each article from the corpus, **tokenize** the text for all articles, and compose an **inverted index**.
+
+Different results of inverted index were generated using naïve indexer and compressed indexer with 5 reduction process. The result outputs are specified in [Demo](./deliverables/demo.pdf) file.
+
+Moreover, single-term query processing is implemented to perform **query search** on both naïve indexer and compressed indexer, using sample queries provided by our professor Ms. _Sabine Bergler_. This result outputs are also specified in [Demo](./deliverables/demo.pdf) file.
+
+### Outline
 
 - [Outline](p2_outline.pdf)
-- [Demo](/deliverables/demo.pdf)
-- [Report](/deliverables/report.pdf)
+
+### Deliverables
+
+- [Report](./deliverables/report.pdf)
+- [Demo](./deliverables/demo.pdf)
+
+### Goal
+
+- Implement a naïve indexer
+- Implement single term query processing
+- Implement lossy dictionary compression (compressed indexer)
+- Compare naive indexer and compressed indexer
+
+## Dataset Used
+
+- **Reuter’s Corpus ["_Reuters-21578_"](../reuters21578_extracted/)**</br>
+  (Visit [Original Website](http://www.daviddlewis.com/resources/testcollections/reuters21578/))
+
+  For **_docID_**, the **_NEWID_** values are used from the Reuters corpus to make data retrieval comparable.
+
+## Dependencies
+
+- **BeautifulSoup4**
+- **NLTK**
+
+  - _word_tokenize()_
+  - **nltk.stem**
+    - _PorterStemmer()_
+  - nltk.corpus
+    - _stopwords_
+
+  (For NLTK package information, refer to [NLTK Packages](https://www.nltk.org/api/nltk.html))
+
+- **PrettyTable**
+
+**BeautifulSoup4** is used for extracting the text data from _**.sgm**_ (dataset) files which is composed of markup languages like HTML and XML.
+
+**NLTK** is used to tokenize, to apply Porter Stemmer, and to remove stop words from the corpus.
+
+**PrettyTable** is used to make a lossy dictionary compression statistics table.

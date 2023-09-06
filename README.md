@@ -8,7 +8,9 @@ This assignment consists of 3 stages: **P1**, **P2**, and **P3**.
 
 #### Built with **Python**.
 
-## [Project 1 (P1)](/P1)
+## Project Stages
+
+### [Project 1 (P1)](/P1)
 
 Text preprocessing with NLTK, proofreading results
 
@@ -16,7 +18,7 @@ Text preprocessing with NLTK, proofreading results
 - [Demo](/P1/deliverables/demo.docx)
 - [Report](/P1/deliverables/report.docx)
 
-## [Project 2 (P2)](/P2)
+### [Project 2 (P2)](/P2)
 
 Text preprocessing with NLTK, proofreading results
 
@@ -24,13 +26,18 @@ Text preprocessing with NLTK, proofreading results
 - [Demo](/P2/deliverables/demo.pdf)
 - [Report](/P2/deliverables/report.pdf)
 
-## [Project 3 (P3)](/P3)
+### [Project 3 (P3)](/P3)
 
 Text preprocessing with NLTK, proofreading results
 
 - [Outline](/P3/p3_outline.pdf)
 - [Demo](/P3/deliverables/demo.pdf)
 - [Report](/P3/deliverables/report.pdf)
+
+## Dataset Used
+
+- **Reuter’s Corpus ["_Reuters-21578_"](./reuters21578_extracted/)**</br>
+  (Visit [Original Website](http://www.daviddlewis.com/resources/testcollections/reuters21578/))
 
 ## Setup
 

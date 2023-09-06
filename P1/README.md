@@ -10,8 +10,43 @@ This assignment consists of 3 stages: **P1**, **P2**, and **P3**.
 
 ## Overview
 
-Text preprocessing with NLTK, proofreading results
+The purpose of this project is to learn how to **text-preprocess** using **NLTK** library.
+
+Given the Reuter’s Corpus [_Reuters-21578_](../reuters21578_extracted/), this project aims to extract the raw text of each article from the corpus, **tokenize** the text for all articles. Then the project cleans the set of texts by applying **Porter Stemmer** and removing certain **stop words**.
+
+The result of the execution is specified in the [Demo](./deliverables/demo.pdf) file.
+
+### Outline
 
 - [Outline](p1_outline.pdf)
-- [Demo](/deliverables/demo.docx)
-- [Report](/deliverables/report.docx)
+
+### Deliverables
+
+- [Report](./deliverables/report.docx)
+- [Demo](./deliverables/demo.docx)
+
+### Goal
+
+Text preprocessing with NLTK, proofreading results.
+
+## Dataset Used
+
+- **Reuter’s Corpus ["_Reuters-21578_"](../reuters21578_extracted/)**</br>
+  (Visit [Original Website](http://www.daviddlewis.com/resources/testcollections/reuters21578/))
+
+## Dependencies
+
+- **BeautifulSoup4**
+- **NLTK**
+
+  - _word_tokenize()_
+  - **nltk.stem**
+    - _PorterStemmer()_
+  - nltk.corpus
+    - _stopwords_
+
+  (For NLTK package information, refer to [NLTK Packages](https://www.nltk.org/api/nltk.html))
+
+**BeautifulSoup4** is used for extracting the text data from _**.sgm**_ (dataset) files which is composed of markup languages like HTML and XML.
+
+**NLTK** is used to tokenize, to apply Porter Stemmer, and to remove stop words from the corpus.
