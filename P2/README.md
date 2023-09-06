@@ -10,7 +10,7 @@ This assignment has 3 stages: **P1**, **P2**, and **P3**.
 
 ## Overview
 
-The purpose of this project is to implement a **naïve indexer**, **single-term query search**, and **lossy dictionary compression indexer** (a.k.a **Compressed Indexer**).
+The purpose of this project is to implement a **naïve indexer**, **single-term query search**, and **Compressed Indexer** (a.k.a lossy dictionary compression indexer).
 
 Given the Reuter’s Corpus [_Reuters-21578_](../reuters21578_extracted/), both naïve indexer and compressed indexer extract the raw text of each article from the corpus, **tokenize** the text for all articles, and compose an **inverted index**.
 
@@ -29,9 +29,9 @@ Moreover, single-term query processing is implemented to perform **query search*
 
 ### Goal
 
-- Implement a naïve indexer
-- Implement single-term query processing
-- Implement lossy dictionary compression (compressed indexer)
+- Implement a naïve indexer.
+- Implement single-term query processing.
+- Implement a compressed indexer via lossy dictionary compression techniques.
 - Compare naïve indexer and compressed indexer
 
 ## Dataset Used
