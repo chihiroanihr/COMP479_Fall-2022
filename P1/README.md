@@ -4,9 +4,7 @@
 
 This assignment has 3 stages: **P1**, **P2**, and **P3**.
 
-#### This repository is dedicated to stage **P1**.
-
-#### Built with **Python**.
+This repository is dedicated to stage **P1**.
 
 ## Overview
 
@@ -34,6 +32,12 @@ The result of the execution is specified in the [Demo](./deliverables/demo.pdf) 
 
 - **Reuter’s Corpus ["_Reuters-21578_"](../reuters21578_extracted/)**</br>
   (Visit [Original Website](http://www.daviddlewis.com/resources/testcollections/reuters21578/))
+
+## Programming Language
+
+### Built with **Python**
+
+**Python>=3.8** is used as a programming language for this project due to its compatibility with natural language processing tasks, facilitated by the NLTK package.
 
 ## Dependencies
 
