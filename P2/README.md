@@ -29,9 +29,9 @@ Moreover, single-term query processing is implemented to perform **query search*
 
 ### Goal
 
-- Implement a naïve indexer
-- Implement single-term query processing
-- Implement a compressed indexer via lossy dictionary compression techniques
+- Implement a **naïve indexer**
+- Implement **single-term query processing**
+- Implement a **compressed indexer** via lossy dictionary compression techniques
 - Compare naïve indexer and compressed indexer
 
 ## Dataset Used
