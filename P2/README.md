@@ -4,9 +4,7 @@
 
 This assignment has 3 stages: **P1**, **P2**, and **P3**.
 
-#### This repository is dedicated to stage **P2**.
-
-#### Built with **Python**.
+This repository is dedicated to stage **P2**.
 
 ## Overview
 
@@ -40,6 +38,12 @@ Moreover, single-term query processing is implemented to perform **query search*
   (Visit [Original Website](http://www.daviddlewis.com/resources/testcollections/reuters21578/))
 
   For **_docID_**, the **_NEWID_** values are used from the Reuters corpus to make data retrieval comparable.
+
+## Programming Language
+
+### Built with **Python**
+
+**Python>=3.8** is used as a programming language for this project due to its compatibility with natural language processing tasks, facilitated by the NLTK package.
 
 ## Dependencies
 
