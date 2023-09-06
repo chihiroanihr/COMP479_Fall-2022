@@ -76,5 +76,4 @@ In this project, [**pypy3**](https://www.pypy.org/) is used as Python3 executabl
 
 #### Start working in the virtual environment
 
-`$ cd ~/pypy3-venv/` </br>
-`$ . bin/activate`
+`$ cd ~/pypy3-venv/` then `$ . bin/activate`
