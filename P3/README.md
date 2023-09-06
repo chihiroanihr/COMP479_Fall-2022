@@ -29,8 +29,10 @@ The results for these pipeline steps are specified in the [Demo](./deliverables/
 
 ### Goal
 
-- Refine your indexing procedure.
-- Implement ranking from SPIMI indexer returned using Ranked BM25 and Unranked Boolean search engines.
+- Compile and measure the execution time required for constructing both the **naive indexer** and the **SPIMI (Single Pass In-Memory Indexing) indexer**.
+- Utilize the **SPIMI indexer** to implement two search engines:
+  - A **Ranked BM25** search engine, which ranks search results based on relevance using the BM25 algorithm.
+  - An **Unranked Boolean** search engine, which performs basic Boolean (AND, OR, NOT) queries.
 - Test and analyze your system.
 - Discuss how your design decisions influence the results.
 
