@@ -1,6 +1,6 @@
 # COMP479-Fall2022-P1
 
-**Information Retrieval and Web Search** course project at Concordia University - assigned by Dr. Sabine Bergler.
+**Information Retrieval and Web Search** course project at Concordia University - assigned by Dr. _Sabine Bergler_.
 
 This assignment has 3 stages: **P1**, **P2**, and **P3**.
 
