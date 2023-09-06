@@ -47,6 +47,6 @@ Text preprocessing with NLTK, proofreading results.
 
   (For NLTK package information, refer to [NLTK Packages](https://www.nltk.org/api/nltk.html))
 
-**BeautifulSoup4** is used for extracting the text data from _**.sgm**_ (dataset) files which is composed of markup languages like HTML and XML.
+**BeautifulSoup4** is used for extracting the text data from _**.sgm**_ (dataset) files which are composed of markup languages like HTML and XML.
 
-**NLTK** is used to tokenize, to apply Porter Stemmer, and to remove stop words from the corpus.
+**NLTK** is used to tokenize, apply Porter Stemmer, and remove stop words from the corpus.
