@@ -27,7 +27,8 @@ The result of the execution is specified in the [Demo](./deliverables/demo.pdf) 
 
 ### Goal
 
-Text preprocessing with NLTK, proofreading results.
+- Text preprocessing with **NLTK** (i.e. tokenization, stemming, etc.)
+- Proofread results (Ensure the quality of the processed text data.)
 
 ## Dataset Used
 
