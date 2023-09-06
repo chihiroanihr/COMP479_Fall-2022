@@ -6,34 +6,48 @@
 
 This assignment has 3 stages: **P1**, **P2**, and **P3**.
 
-#### Built with **Python**.
+## [Project 1 (P1)](/P1): Text Preprocessing and Proofreading
 
-## Project Stages
+### Key Tasks
 
-### [Project 1 (P1)](/P1)
+- Utilize **NLTK** for text preprocessing, which involves tasks like tokenization and stemming.
+- Proofread and ensure the quality of the processed text data.
 
-Text preprocessing with NLTK, proofreading results.
+### Resources
 
 - [Outline](/P1/p1_outline.pdf)
 - [Demo](/P1/deliverables/demo.docx)
 - [Report](/P1/deliverables/report.docx)
 
-### [Project 2 (P2)](/P2)
+## [Project 2 (P2)](/P2): Indexing and Query Processing
 
-Implement a naive indexer, single-term query processing, and lossy dictionary compression (compressed indexer).
+### Key Tasks
+
+- Implement a **naive indexer** for indexing documents.
+- Develop a mechanism for processing single-term queries.
+- Apply lossy dictionary compression techniques to create a **compressed indexer**.
+
+### Resources
 
 - [Outline](/P2/p2_outline.pdf)
 - [Demo](/P2/deliverables/demo.pdf)
 - [Report](/P2/deliverables/report.pdf)
 
-### [Project 3 (P3)](/P3)
+## [Project 3 (P3)](/P3): Performance Analysis and Search Engine Implementation
 
-Compile and compute execution time for constructing naive indexer and SPIMI indexer.
-Implement Ranked BM25 and Unranked Boolean search engines using SPIMI indexer.
+### Key Tasks
 
+- Compile and measure the execution time required for constructing both the **naive indexer** and the **SPIMI (Single Pass In-Memory Indexing) indexer**.
+- Utilize the **SPIMI indexer** to implement two search engines:
+  - A **Ranked BM25** search engine, which ranks search results based on relevance using the BM25 algorithm.
+  - An **Unranked Boolean** search engine, which performs basic Boolean (AND, OR, NOT) queries.
+
+### Resources
 - [Outline](/P3/p3_outline.pdf)
 - [Demo](/P3/deliverables/demo.pdf)
 - [Report](/P3/deliverables/report.pdf)
+
+#### Built with **Python**.
 
 ## Dataset Used
 
