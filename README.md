@@ -6,6 +6,10 @@
 
 This assignment has 3 stages: **P1**, **P2**, and **P3**.
 
+### Built with **Python**
+
+**Python>=3.8** is used as a programming language for this project due to its compatibility with natural language processing tasks, facilitated by the NLTK package.
+
 ## [Project 1 (P1)](/P1): Text Preprocessing and Proofreading
 
 ### Key Tasks
@@ -47,8 +51,6 @@ This assignment has 3 stages: **P1**, **P2**, and **P3**.
 - [Demo](/P3/deliverables/demo.pdf)
 - [Report](/P3/deliverables/report.pdf)
 
-#### Built with **Python**.
-
 ## Dataset Used
 
 - **Reuter’s Corpus ["_Reuters-21578_"](./reuters21578_extracted/)**</br>
@@ -56,7 +58,9 @@ This assignment has 3 stages: **P1**, **P2**, and **P3**.
 
 ## Setup
 
-In this project, [**pypy3**](https://www.pypy.org/) is used as Python3 executable.
+In this project, [**pypy3**](https://www.pypy.org/) is used as Python3 executable. 
+
+[**Pypy3**](https://www.pypy.org/) serves as a substitute for the native Python3 interpreter due to its superior runtime performance. Given that these projects involve processing an extensive volume of large files through iterative operations, opting for pypy3 as an alternative interpreter was a highly efficient decision.
 
 #### Install pypy3 on MacOS
 
