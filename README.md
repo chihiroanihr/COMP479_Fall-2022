@@ -4,7 +4,7 @@
 
 ## Overview
 
-This assignment consists of 3 stages: **P1**, **P2**, and **P3**.
+This assignment has 3 stages: **P1**, **P2**, and **P3**.
 
 #### Built with **Python**.
 
@@ -12,7 +12,7 @@ This assignment consists of 3 stages: **P1**, **P2**, and **P3**.
 
 ### [Project 1 (P1)](/P1)
 
-Text preprocessing with NLTK, proofreading results
+Text preprocessing with NLTK, proofreading results.
 
 - [Outline](/P1/p1_outline.pdf)
 - [Demo](/P1/deliverables/demo.docx)
@@ -20,7 +20,7 @@ Text preprocessing with NLTK, proofreading results
 
 ### [Project 2 (P2)](/P2)
 
-Text preprocessing with NLTK, proofreading results
+Implement a naive indexer, single-term query processing, and lossy dictionary compression (compressed indexer).
 
 - [Outline](/P2/p2_outline.pdf)
 - [Demo](/P2/deliverables/demo.pdf)
@@ -28,7 +28,8 @@ Text preprocessing with NLTK, proofreading results
 
 ### [Project 3 (P3)](/P3)
 
-Text preprocessing with NLTK, proofreading results
+Compile and compute execution time for constructing naive indexer and SPIMI indexer.
+Implement Ranked BM25 and Unranked Boolean search engines using SPIMI indexer.
 
 - [Outline](/P3/p3_outline.pdf)
 - [Demo](/P3/deliverables/demo.pdf)
