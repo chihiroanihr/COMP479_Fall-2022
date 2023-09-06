@@ -2,7 +2,7 @@
 
 **Information Retrieval and Web Search** course project at Concordia University - assigned by Dr. Sabine Bergler.
 
-This assignment consists of 3 stages: **P1**, **P2**, and **P3**.
+This assignment has 3 stages: **P1**, **P2**, and **P3**.
 
 #### This repository is dedicated to stage **P3**.
 
@@ -12,13 +12,11 @@ This assignment consists of 3 stages: **P1**, **P2**, and **P3**.
 
 The purpose of this project is to compile and compute execution time for **naïve indexer** and **SPIMI indexer** constructions, and to retrieve and analyze **BM25 ranked results** and **Boolean unranked results** based on given queries.
 
-Given the Reuter’s Corpus [_Reuters-21578_](../reuters21578_extracted/), both naïve indexer and SPIMI indexer extract the raw text of each article from the corpus, tokenize the text for all articles, and compose an inverted index, which is then used for **analysis
-of ranked and unranked retrieval**.
+Given the Reuter’s Corpus [_Reuters-21578_](../reuters21578_extracted/), both naïve indexer and SPIMI indexer extract the raw text of each article from the corpus, tokenize the text for all articles, and compose an inverted index, which is then used for **analysis of ranked and unranked retrieval**.
 
-**IMPORTANT**: The **preprocessing** (i.e. stemming, lowercasing, etc.) was omitted since it was not the necessary topic for this project. However, **stop words** removal is
-implemented during the input query processing and tokenization, in order to retrieve refined results.
+**IMPORTANT**: The **preprocessing** (i.e. stemming, lowercasing, etc.) was omitted since it was not the necessary topic for this project. However, **stop words** removal is implemented during the input query processing and tokenization, in order to retrieve refined results.
 
-The results for these pipeline steps are specified in [Demo](./deliverables/demo.pdf) file.
+The results for these pipeline steps are specified in the [Demo](./deliverables/demo.pdf) file.
 
 ### Outline
 
@@ -31,9 +29,9 @@ The results for these pipeline steps are specified in [Demo](./deliverables/demo
 
 ### Goal
 
-- Refine your indexing procedure
-- Implement ranking of returns
-- Test and analyze your system
+- Refine your indexing procedure.
+- Implement ranking from SPIMI indexer returned using Ranked BM25 and Unranked Boolean search engines.
+- Test and analyze your system.
 - Discuss how your design decisions influence the results.
 
 ## Dataset Used
@@ -56,8 +54,8 @@ The results for these pipeline steps are specified in [Demo](./deliverables/demo
 
 - **PrettyTable**
 
-**BeautifulSoup4** is used for extracting the text data from _**.sgm**_ (dataset) files which is composed of markup languages like HTML and XML.
+**BeautifulSoup4** is used for extracting the text data from _**.sgm**_ (dataset) files which are composed of markup languages like HTML and XML.
 
-**NLTK** is used to tokenize, to apply Porter Stemmer, and to remove stop words from the corpus.
+**NLTK** is used to tokenize, apply Porter Stemmer, and remove stop words from the corpus.
 
 **PrettyTable** is used to make a lossy dictionary compression statistics table.
