@@ -62,7 +62,7 @@ In this project, [**pypy3**](https://www.pypy.org/) is used as Python3 executabl
 
 [**Pypy3**](https://www.pypy.org/) serves as a substitute for the native Python3 interpreter due to its superior runtime performance. Given that these projects involve processing an extensive volume of large files through iterative operations, opting for pypy3 as an alternative interpreter was a highly efficient decision.
 
-#### Install pypy3 on MacOS
+#### Install pypy3
 
 `$ brew install pypy3`
 
