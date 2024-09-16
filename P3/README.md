@@ -1,4 +1,4 @@
-# COMP479-Fall2022-P3
+# COMP479-P3_Fall-2022
 
 **Information Retrieval and Web Search** course project at Concordia University - assigned by Dr. _Sabine Bergler_.
 
