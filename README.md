@@ -1,4 +1,4 @@
-# COMP479-Fall2022
+# COMP479_Fall2022
 
 **Information Retrieval and Web Search** course project at Concordia University - assigned by Dr. _Sabine Bergler_.
 
@@ -20,8 +20,8 @@ This assignment has 3 stages: **P1**, **P2**, and **P3**.
 ### Resources
 
 - [Outline](/P1/p1_outline.pdf)
-- [Demo](/P1/deliverables/demo.docx)
-- [Report](/P1/deliverables/report.docx)
+- [Demo](/P1/deliverables/demo.pdf)
+- [Report](/P1/deliverables/report.pdf)
 
 ## [Project 2 (P2)](/P2): Indexing and Query Processing
 
