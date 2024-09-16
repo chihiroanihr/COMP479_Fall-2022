@@ -20,8 +20,8 @@ The result of the execution is specified in the [Demo](./deliverables/demo.pdf) 
 
 ### Deliverables
 
-- [Report](./deliverables/report.docx)
-- [Demo](./deliverables/demo.docx)
+- [Report](./deliverables/report.pdf)
+- [Demo](./deliverables/demo.pdf)
 
 ### Goal
 
